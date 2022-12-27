@@ -41,7 +41,9 @@ resource "aws_instance" "web" {
 #!/bin/bash
 apt-get -y update
 apt-get -y install nginx
-service nginx start
+git clone https://github.com/jpal91/test-terraform.git test
+mv test/default /etc/nginx/sites-enabled/default
+service nginx restart
 echo fin v1.00!
 EOF
 
